@@ -11,3 +11,10 @@ select *from Students
 update Students set StudentName='kittt',CGPA=2.8,Semester=4.2 where StudentId=3;
 insert into Students (StudentId,StudentName,CGPA,Semester) VALUES(3,'ka',3.4,4.2);
 delete from Students where StudentId=0;
+
+BEGIN TRANSACTION;
+
+INSERT INTO Students (StudentId, StudentName, CGPA, Semester)
+VALUES (88, 'era', 3.5, 2.2);
+commit 
+ROLLBACK;
